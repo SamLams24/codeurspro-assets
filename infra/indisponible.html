@@ -1,0 +1,135 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Site momentanément indisponible · Codeurs Pro</title>
+<noscript><meta http-equiv="refresh" content="30"></noscript>
+<!--
+  E24 : page servie par Nginx Proxy Manager quand le site ne répond pas (502, 503, 504).
+  Fichier autonome : aucune ressource externe, car le serveur qui les fournirait est justement celui qui ne répond pas.
+  Couleurs : docs/design-tokens.css (copiées, ce fichier ne passe pas par Tailwind). Codi : apps/web/public/codi/codi-reflechit.svg.
+  Installation : infra/README.md, section « Pages d'erreur du proxy ».
+-->
+<style>
+:root{--bg:#0a0a0c;--surface:#161618;--line:#2a2a2e;--text:#f4f4f6;--text-muted:#c9c9d2;--text-subtle:#8a8a96;--accent:#5e17eb;--accent-hover:#6c2af0;--accent-text:#8c6ff0;--accent-strong:#a48cf5;--r-md:14px}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:var(--bg);color:var(--text);font:16px/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+main{max-width:680px;margin:0 auto;padding:56px 16px 40px;display:flex;flex-direction:column;align-items:center;gap:24px;text-align:center}
+.brand{font-weight:700;letter-spacing:-.01em;color:var(--text-muted)}
+.code{margin-bottom:10px;font:500 13px/1.4 ui-monospace,Menlo,Consolas,monospace;letter-spacing:.14em;text-transform:uppercase;color:var(--text-subtle)}
+h1{margin:0;font-size:clamp(26px,6vw,36px);line-height:1.2;text-wrap:balance}
+p{margin:0;color:var(--text-muted);text-wrap:pretty}
+.card{width:100%;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-md);padding:20px;text-align:left}
+.card h2{margin:0 0 8px;font-size:17px}
+.card ul{margin:0;padding-left:20px;color:var(--text-muted);font-size:15px}
+.card li+li{margin-top:6px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;justify-content:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:0 24px;border-radius:var(--r-md);font-family:inherit;font-size:16px;font-weight:600;line-height:1;text-decoration:none;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--text)}
+.btn:hover{background:var(--surface);border-color:var(--accent-text)}
+.btn.primary{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.primary:hover{background:var(--accent-hover)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--accent-strong);outline-offset:2px}
+.status{font-size:14px;color:var(--text-subtle);min-height:1.6em}
+.channels{display:flex;flex-wrap:wrap;gap:8px 20px;justify-content:center;font-size:15px}
+.channels a{color:var(--accent-text);text-decoration:none}
+.channels a:hover{color:var(--accent-strong);text-decoration:underline}
+hr{width:100%;border:0;border-top:1px solid var(--line);margin:8px 0}
+.en h1{font-size:clamp(22px,5vw,28px)}
+@media (prefers-reduced-motion:no-preference){.codi{animation:float 3s ease-in-out infinite alternate}@keyframes float{to{transform:translateY(-4px)}}}
+</style>
+</head>
+<body>
+<main>
+<div class="brand">Codeurs Pro</div>
+<svg aria-hidden="true" focusable="false" class="codi" xmlns="http://www.w3.org/2000/svg" width="120" height="110" viewBox="0 0 240 220">
+<defs>
+<radialGradient id="body-reflechit" cx="38%" cy="30%" r="78%"><stop offset="0" stop-color="#ffffff"/><stop offset="0.55" stop-color="#f4f4f6"/><stop offset="1" stop-color="#c9c9d2"/></radialGradient>
+<filter id="glow-reflechit" x="-60%" y="-60%" width="220%" height="220%"><feGaussianBlur stdDeviation="5"/></filter>
+</defs>
+<ellipse cx="120" cy="198" rx="46" ry="6" fill="#5e17eb" opacity="0.4" filter="url(#glow-reflechit)"/>
+<circle cx="120" cy="112" r="60" fill="url(#body-reflechit)"/>
+<path d="M157 80 A52 52 0 0 1 166 132" fill="none" stroke="#8c6ff0" stroke-width="3" stroke-linecap="round" opacity="0.45"/>
+<path d="M60 114 Q120 126 180 114 L180 128 Q120 140 60 128 Z" fill="#8c6ff0" opacity="0.35" filter="url(#glow-reflechit)"/>
+<path d="M60 115 Q120 127 180 115 L180 127 Q120 139 60 127 Z" fill="#1a1430"/>
+<path d="M60 115 Q120 127 180 115 L180 118.5 Q120 130.5 60 118.5 Z" fill="#09070f" opacity="0.9"/>
+<path d="M63 122 Q120 134 177 122" fill="none" stroke="#8c6ff0" stroke-width="8" stroke-linecap="round" opacity="0.9" filter="url(#glow-reflechit)"/>
+<path d="M63 122 Q120 134 177 122" fill="none" stroke="#8c6ff0" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M63 122 Q120 134 177 122" fill="none" stroke="#efe9ff" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M61 115 Q120 127 179 115" fill="none" stroke="#9c9ca8" stroke-width="1.2" stroke-linecap="round"/>
+<path d="M61 127.5 Q120 139.5 179 127.5" fill="none" stroke="#ffffff" stroke-width="1.8" stroke-linecap="round"/>
+<path d="M182 122 Q196 150 166 160" fill="none" stroke="#e4e4ea" stroke-width="8" stroke-linecap="round"/>
+<circle cx="182" cy="122" r="4" fill="#a48cf5"/>
+<circle cx="158" cy="160" r="10" fill="url(#body-reflechit)"/>
+<ellipse cx="100" cy="95" rx="8" ry="11" fill="#15151a"/>
+<ellipse cx="140" cy="98" rx="8" ry="7" fill="#15151a"/>
+<circle cx="102" cy="88" r="2.8" fill="#ffffff"/>
+<circle cx="142" cy="95" r="2.2" fill="#ffffff"/>
+<path d="M131 80 L150 85" fill="none" stroke="#15151a" stroke-width="3" stroke-linecap="round"/>
+<path d="M110 147 Q115 143 120 147 Q125 151 130 147" fill="none" stroke="#15151a" stroke-width="3.5" stroke-linecap="round"/>
+<path d="M187 40 Q187 30 197 30 Q207 30 207 39 Q207 45 199 49 Q196 51 196 56" fill="none" stroke="#8c6ff0" stroke-width="5" stroke-linecap="round"/>
+<circle cx="196" cy="65" r="3.2" fill="#8c6ff0"/>
+</svg>
+<section lang="fr">
+<p class="code">Site momentanément indisponible</p>
+<h1>Le site ne répond pas pour le moment.</h1>
+<p style="margin-top:12px">Ce n'est pas ta connexion : notre serveur redémarre ou rencontre un problème. Ta place dans la file d'attente et tes données ne sont pas touchées.</p>
+</section>
+<div class="card" lang="fr">
+<h2>Que faire ?</h2>
+<ul>
+<li>Attends un peu : la page réessaie toute seule toutes les 30 secondes.</li>
+<li>Si rien ne change après quelques minutes, signale-nous l'incident par email.</li>
+<li>Suis les nouvelles sur nos canaux, ci-dessous.</li>
+</ul>
+</div>
+<div class="actions">
+<button type="button" class="btn primary" id="reload">Recharger maintenant</button>
+<a class="btn" id="report" href="mailto:contact@codeurspro.com?subject=Site%20indisponible%20(codeurspro.com)">Signaler l'incident</a>
+</div>
+<p class="status" id="status" aria-live="polite" lang="fr"></p>
+<nav class="channels" aria-label="Nos canaux">
+<a href="https://whatsapp.com/channel/0029Vb2mhTGI7Be7pFjfgR2d">Chaîne WhatsApp</a>
+<a href="https://t.me/codeurspro">Telegram</a>
+<a href="mailto:contact@codeurspro.com">contact@codeurspro.com</a>
+</nav>
+<hr>
+<section lang="en" class="en">
+<p class="code">Site temporarily unavailable</p>
+<h1>The site is not responding right now.</h1>
+<p style="margin-top:12px">It is not your connection: our server is restarting or having a problem. Your place in the waiting list and your data are safe. This page tries again on its own every 30 seconds.</p>
+<div class="actions" style="margin-top:16px">
+<a class="btn" id="report-en" href="mailto:contact@codeurspro.com?subject=Site%20unavailable%20(codeurspro.com)">Report the incident</a>
+</div>
+</section>
+</main>
+<script>
+(function () {
+  var DELAY = 30, left = DELAY, status = document.getElementById("status");
+  var page = location.href, at = new Date().toLocaleString("fr-FR", { timeZone: "Africa/Lome" });
+  function mail(subject, lines) {
+    return "mailto:contact@codeurspro.com?subject=" + encodeURIComponent(subject) + "&body=" + encodeURIComponent(lines.join("\n"));
+  }
+  document.getElementById("report").href = mail("Site indisponible (codeurspro.com)",
+    ["Bonjour, le site ne répond pas.", "", "Page : " + page, "Date : " + at + " (heure de Lomé)", "", "Ce que je faisais :", ""]);
+  document.getElementById("report-en").href = mail("Site unavailable (codeurspro.com)",
+    ["Hello, the site is not responding.", "", "Page: " + page, "Date: " + at + " (Lomé time)", "", "What I was doing:", ""]);
+  document.getElementById("reload").addEventListener("click", function () { location.reload(); });
+  // Before reloading, ask whether the site answers again, so that the page does not blink every 30 seconds for nothing.
+  function check() {
+    status.textContent = "Vérification en cours…";
+    fetch(page, { method: "HEAD", cache: "no-store" })
+      .then(function (r) { if (r.status < 500) location.reload(); else wait(); })
+      .catch(wait);
+  }
+  function tick() {
+    status.textContent = "Nouvel essai dans " + left + " s.";
+    if (left-- <= 0) check(); else setTimeout(tick, 1000);
+  }
+  function wait() { left = DELAY; tick(); }
+  tick();
+})();
+</script>
+</body>
+</html>
